@@ -1,0 +1,21 @@
+body {
+  background: #1e1d22;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+.container-fluid {
+  margin: auto 0;
+}
+#image {
+  margin-left: 15%;
+  margin-top: 3%;
+  width: 60%;
+  height: 90%;
+}
+#logo {
+  margin-left: -50%;
+  margin-top: 40%;
+  height: 7%;
+  width: 70%;
+}
