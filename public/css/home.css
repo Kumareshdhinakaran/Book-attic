@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
+body {
+  background: #1e1d22;
+  width: 100%;
+  height: 100%;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+}
+ul {
+  list-style-type: none;
+  font-size: 1.3rem;
+  margin: 2% 0;
+  color: aliceblue;
+  vertical-align: middle;
+  padding-inline-start: 0px;
+}
+p {
+  color: white;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  margin: 3% 10%;
+}
+p span {
+  margin: 7%;
+  padding: 2% 10%;
+  background-color: white;
+  border-radius: 50%;
+}
+ul li {
+  margin: 10% 0;
+}
+.col-md-2 {
+  background: #252425;
+}
+.navb {
+  margin: 20% 10%;
+}
+#logo {
+  height: 19%;
+  width: 100%;
+  padding: 15% 10%;
+}
+
+@media only screen and (min-width: 768px) {
+  #logo {
+    height: 20%;
+    width: 100%;
+    padding: none;
+  }
+  .row {
+    height: -webkit-fill-available;
+  }
+}

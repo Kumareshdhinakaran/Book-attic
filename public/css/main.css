@@ -1,21 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
 body {
   background: #1e1d22;
-  overflow: hidden;
   width: 100%;
   height: 100%;
+  font-family: "Lato", sans-serif;
 }
 .container-fluid {
-  margin: auto 0;
+  padding: 2% 10%;
+  box-sizing: border-box;
 }
 #image {
-  margin-left: 15%;
-  margin-top: 3%;
-  width: 60%;
+  width: 90%;
   height: 90%;
 }
+#page {
+  margin: auto 0;
+  float: left;
+}
 #logo {
-  margin-left: -50%;
-  margin-top: 40%;
-  height: 7%;
-  width: 70%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height: 8%;
+}
+
+.btn {
+  border-radius: 1rem;
+  width: 100%;
+  background-color: #745ebc;
+  border: none;
+  color: white;
+}
+.elements {
+  margin: 10% auto;
+  width: 80%;
+}
+
+a,
+a:hover {
+  color: #745ebc;
+}
+p {
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  padding: 0 5%;
+}
+
+input[type="text"],
+input[type="password"] {
+  background-color: rgba(31, 30, 34, 0.5);
+  border-radius: 1rem;
+}
+
+::placeholder {
+  color: lavenderblush;
+}
+
+@media only screen and (min-width: 992px) {
+  body {
+    overflow: hidden;
+  }
+  #page {
+    margin-left: -6%;
+  }
 }

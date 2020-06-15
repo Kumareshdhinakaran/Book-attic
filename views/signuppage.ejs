@@ -1,0 +1,42 @@
+<%- include ('partial/pagestarter.ejs')%>
+<div id="page" class="col-lg-4">
+<img id="logo" src="/static/images/logo.png" alt="logo" />
+<form>
+  <div class="elements">
+    <div class="form-group">
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Username"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        class="form-control"
+        type="password"
+        placeholder="Password"
+      />
+    </div>
+    <div class="form-group">
+        <input
+          class="form-control"
+          type="password"
+          placeholder="Add New Password"
+        />
+      </div>
+  </div>
+
+  <div class="elements">
+    <button type="button" class="btn btn-default">
+      REGISTER
+    </button>
+  </div>
+</form>
+<div class="elements">
+  <p>Already have an account? <a href="/">Login</a></p>
+</div>
+<div class="elements">
+  <p>This is mini project is developed as a part of sirius summer internship</a></p>
+</div>
+</div>
+<%- include ('partial/pagefooter.ejs')%>

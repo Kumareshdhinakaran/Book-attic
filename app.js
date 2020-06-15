@@ -6,7 +6,13 @@ app.set("view engine", "ejs");
 app.use("/static", express.static(__dirname + "/public"));
 //Home route
 app.get("/", function (req, res) {
-  res.render("home");
+  res.render("loginpage");
+});
+app.get("/register", function (req, res) {
+  res.render("signuppage");
+});
+app.get("/test", function (req, res) {
+  res.render("partial/navheader");
 });
 
 //Server listening
