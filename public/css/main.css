@@ -1,16 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
+@import url("./common.css");
 body {
-  background: #1e1d22;
+  background: var(--primary-color);
   width: 100%;
   height: 100%;
   font-family: "Lato", sans-serif;
 }
 a,
 a:hover {
-  color: #745ebc;
+  color: var(--button-color);
 }
 p {
-  color: white;
+  color: var(--home-page-font-color);
   font-size: 12px;
   text-align: center;
   padding: 0 5%;
@@ -18,14 +19,14 @@ p {
 
 input[type="text"],
 input[type="password"] {
-  background-color: rgba(31, 30, 34, 0.5);
+  background-color: var(--home-page-secondary-color);
   border-radius: 2rem;
   padding: 3vh;
 }
 
 .contents {
   display: flex;
-  padding: 5% 10%;
+  padding: 2% 5%;
 }
 .container-fluid {
   padding: 2% 10%;
@@ -35,9 +36,9 @@ input[type="password"] {
   border-radius: 2rem;
   width: 100%;
   padding: 0.5rem 0.75rem;
-  background-color: #745ebc;
+  background-color: var(--button-color);
   border: none;
-  color: white;
+  color: var(--home-page-font-color);
 }
 .elements {
   margin: 10% auto;
@@ -61,7 +62,7 @@ input[type="password"] {
 }
 
 ::placeholder {
-  color: lavenderblush;
+  color: var(--home-page-font-color);
 }
 ::-webkit-scrollbar {
   width: 0px;
