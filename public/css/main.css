@@ -5,38 +5,6 @@ body {
   height: 100%;
   font-family: "Lato", sans-serif;
 }
-.container-fluid {
-  padding: 2% 10%;
-  box-sizing: border-box;
-}
-#image {
-  width: 90%;
-  height: 90%;
-}
-#page {
-  margin: auto 0;
-  float: left;
-}
-#logo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-  height: 8%;
-}
-
-.btn {
-  border-radius: 1rem;
-  width: 100%;
-  background-color: #745ebc;
-  border: none;
-  color: white;
-}
-.elements {
-  margin: 10% auto;
-  width: 80%;
-}
-
 a,
 a:hover {
   color: #745ebc;
@@ -51,7 +19,45 @@ p {
 input[type="text"],
 input[type="password"] {
   background-color: rgba(31, 30, 34, 0.5);
-  border-radius: 1rem;
+  border-radius: 2rem;
+  padding: 3vh;
+}
+
+.contents {
+  display: flex;
+  padding: 5% 10%;
+}
+.container-fluid {
+  padding: 2% 10%;
+  box-sizing: border-box;
+}
+.btn {
+  border-radius: 2rem;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  background-color: #745ebc;
+  border: none;
+  color: white;
+}
+.elements {
+  margin: 10% auto;
+  width: 100%;
+}
+
+#image {
+  width: 90%;
+  height: 90%;
+}
+#page {
+  margin: auto 0;
+  float: left;
+}
+#logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  height: auto;
 }
 
 ::placeholder {

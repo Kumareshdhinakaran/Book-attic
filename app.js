@@ -6,7 +6,6 @@ var express = require("express"),
 app.set("view engine", "ejs");
 app.use("/static", express.static(__dirname + "/public"));
 
-console.log(Books);
 //Home route
 app.get("/", function (req, res) {
   res.render("loginpage");
