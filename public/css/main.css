@@ -57,6 +57,10 @@ input[type="password"] {
 ::placeholder {
   color: lavenderblush;
 }
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
 
 @media only screen and (min-width: 992px) {
   body {

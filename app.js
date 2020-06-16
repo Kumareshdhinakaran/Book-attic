@@ -1,9 +1,12 @@
 var express = require("express"),
   app = express(),
+  Books = require("./data"),
   port = 5000;
 
 app.set("view engine", "ejs");
 app.use("/static", express.static(__dirname + "/public"));
+
+console.log(Books);
 //Home route
 app.get("/", function (req, res) {
   res.render("loginpage");
@@ -12,7 +15,7 @@ app.get("/register", function (req, res) {
   res.render("signuppage");
 });
 app.get("/test", function (req, res) {
-  res.render("partial/navheader");
+  res.render("homepage", { data: Books });
 });
 
 //Server listening
