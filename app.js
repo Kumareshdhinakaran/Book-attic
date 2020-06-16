@@ -13,8 +13,11 @@ app.get("/", function (req, res) {
 app.get("/register", function (req, res) {
   res.render("signuppage");
 });
-app.get("/test", function (req, res) {
+app.get("/index", function (req, res) {
   res.render("homepage", { data: Books });
+});
+app.get("/index/new", function (req, res) {
+  res.render("addbookpage");
 });
 
 //Server listening

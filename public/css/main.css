@@ -40,6 +40,9 @@ input[type="password"] {
   border: none;
   color: var(--home-page-font-color);
 }
+.btn:focus {
+  box-shadow: none;
+}
 .elements {
   margin: 10% auto;
   width: 100%;

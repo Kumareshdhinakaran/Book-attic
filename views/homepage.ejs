@@ -1,54 +1,55 @@
 <%- include ('partial/navheader') %>
-<!--------------------------Fiction Books---------------------------------->
-<div id="fiction">
-  <h2>FICTION</h2>
-  <div class="row">
-    <% data.forEach(function(book){ if(book.category === "fiction"){ %>
-    <div class="col-lg-3 col-sm-6">
-      <div class="card">
-        <div class="card-img-wrap">
-          <img class="card-img-top" src="<%= book.image %>" alt="" />
-        </div>
+<div id="booksection">
+  <!--------------------------Fiction Books---------------------------------->
+  <div id="fiction">
+    <h2>FICTION</h2>
+    <div class="row">
+      <% data.forEach(function(book){ if(book.category === "fiction"){ %>
+      <div class="col-lg-3 col-sm-6">
+        <div class="card">
+          <div class="card-img-wrap">
+            <img class="card-img-top" src="<%= book.image %>" alt="" />
+          </div>
 
-        <div class="card-body">
-          <p class="card-title"><%= book.title %></p>
-          <p class="card-text author">
-            by <%= book.author %>
-          </p>
-          <p class="card-text rating">
-            <%= book.rating %> rating
-            <span class="float-right">$<%= book.cost %></span>
-          </p>
+          <div class="card-body">
+            <p class="card-title"><%= book.title %></p>
+            <p class="card-text author">
+              by <%= book.author %>
+            </p>
+            <p class="card-text rating">
+              <%= book.rating %> rating
+              <span class="float-right">$<%= book.cost %></span>
+            </p>
+          </div>
         </div>
       </div>
+      <%}});%>
     </div>
-    <%}});%>
   </div>
-</div>
-<!--------------------------Non Fiction Books---------------------------------->
-<div id="nonfiction">
-  <h2>NON FICTION</h2>
-  <div class="row">
-    <% data.forEach(function(book){ if(book.category === "nonfiction"){ %>
-    <div class="col-lg-3 col-sm-6">
-      <div class="card">
-        <div class="card-img-wrap">
-          <img class="card-img-top" src="<%= book.image %>" alt="" />
-        </div>
-        <div class="card-body">
-          <p class="card-title"><%= book.title %></p>
-          <p class="card-text author">
-            by <%= book.author %>
-          </p>
-          <p class="card-text rating">
-            <%= book.rating %> rating
-            <span class="float-right">$<%= book.cost %></span>
-          </p>
+  <!--------------------------Non Fiction Books---------------------------------->
+  <div id="nonfiction">
+    <h2>NON FICTION</h2>
+    <div class="row">
+      <% data.forEach(function(book){ if(book.category === "nonfiction"){ %>
+      <div class="col-lg-3 col-sm-6">
+        <div class="card">
+          <div class="card-img-wrap">
+            <img class="card-img-top" src="<%= book.image %>" alt="" />
+          </div>
+          <div class="card-body">
+            <p class="card-title"><%= book.title %></p>
+            <p class="card-text author">
+              by <%= book.author %>
+            </p>
+            <p class="card-text rating">
+              <%= book.rating %> rating
+              <span class="float-right">$<%= book.cost %></span>
+            </p>
+          </div>
         </div>
       </div>
+      <%}});%>
     </div>
-    <%}});%>
   </div>
 </div>
-
 <%- include ('partial/navfooter') %>

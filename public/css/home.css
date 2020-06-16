@@ -23,6 +23,41 @@ p {
   letter-spacing: 1px;
   margin: 3.1% 10%;
 }
+.form {
+  width: 90%;
+  height: 100%;
+  margin: 1% 10% 0% 10%;
+  font-weight: 300;
+  text-shadow: 0.2px 0.1px rgba(172, 172, 172, 0.6);
+  font-size: 0.9rem;
+}
+.form-element {
+  display: flex;
+  flex-direction: column;
+  margin: 1% 0%;
+}
+.button-container {
+  padding-top: 5%;
+  height: 100%;
+}
+.radio {
+  margin-left: 4%;
+  width: 3%;
+}
+input[type="radio"] {
+  background: var(--primary-color);
+}
+input,
+textarea {
+  color: var(--home-page-font-color);
+  background: var(--primary-color);
+  border-radius: 0.5rem;
+  padding: 0.7% 2%;
+  border: 1px solid rgba(172, 172, 172, 0.6);
+}
+::placeholder {
+  color: var(--home-page-font-color);
+}
 #icon {
   margin: 7%;
   padding: 2% 10%;
@@ -40,12 +75,22 @@ a {
 .col-md-2 {
   background: var(--home-page-secondary-color);
 }
-
 .card {
   background: var(--home-page-secondary-color);
   width: 85%;
   border-radius: 0.5rem;
   margin-top: 15%;
+}
+.btn {
+  border-radius: 2rem;
+  width: 30%;
+  padding: 0.5rem 0.75rem;
+  background-color: var(--button-color);
+  margin: auto 35%;
+  color: var(--home-page-font-color);
+}
+.btn:focus {
+  box-shadow: none;
 }
 .card .card-img-wrap {
   width: 40%;
@@ -75,7 +120,7 @@ a {
   font-weight: 500;
 }
 #booksection {
-  margin: 1% 3%;
+  margin: 1% 4%;
 }
 #nonfiction {
   margin-top: 7%;
