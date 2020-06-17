@@ -1,53 +1,10 @@
 <%- include ('partial/navheader')%>
+<div class="add-book">
 <!-----------------Form for new Book----------------------------->
-<h3 class="ml-5">ADD BOOK</h3>
-<div class="form">
-  <form action="" method="">
+<h3>ADD BOOK</h3>
+<%- include ('partial/bookdetailsform')%>
 
-    <!-------------Title of the Book -------------------->
-    <div class="form-element">
-      <label for="Book title">Book Title</label>
-      <input type="text" />
-    </div>
-
-    <!------------- Author of the book--------------------->
-    <div class="form-element">
-      <label for="author">Author</label>
-      <input type="text" />
-    </div>
-
-    <!-------------- category of the book ------------------>
-    <div class="mt-3 mb-1">
-      <label for="category">Category</label>
-      <input type="radio" class="radio" name="category" value="Fiction" />
-      <label for="Fiction" class="radio-custom-label">Fiction</label>
-      <input type="radio" class="radio" name="category" value="Non Fiction" />
-      <label for="Non Fiction" class="radio-custom-label">Non Fiction</label>
-    </div>
-
-    <!-----------In single price and rating------------------->
-    <div class="row">
-
-      <!---------- price of the book ---------------->
-      <div class="form-element col-3 m-0">
-        <label for="price">Price</label>
-        <input type="number" />
-      </div>
-
-      <!----------- rating of the book --------------->
-      <div class="form-element col-3 ml-auto mr-auto mt-0">
-        <label for="rating">Rating</label>
-        <input type="number" min="0" max="5" step="0.1" />
-      </div>
-    </div>
-
-    <!----------------Description of the Book------------------->
-    <div class="form-element">
-      <label for="about">About the Book</label>
-      <textarea name="about" cols="30" rows="5"></textarea>
-    </div>
-
-    <!-----------------Submit button--------------------------->
+<!-----------------Submit button--------------------------->
     <div class="button-container">
       <button type="button" class="btn btn-default">
         Add Book
@@ -56,4 +13,6 @@
   </form>
 </div>
 <!---------------------Ends here ---------------------------->
+</div>
+
 <%- include ('partial/navfooter')%>

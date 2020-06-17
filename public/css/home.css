@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
 @import url("./common.css");
+
+/* Main and common page */
 body {
   background: var(--primary-color);
   width: 100%;
@@ -14,7 +16,7 @@ h2 {
 ul {
   list-style-type: none;
   font-size: 1.5vw;
-  margin: 35% 5%;
+  margin: 35% 10%;
   vertical-align: middle;
   padding-inline-start: 0px;
 }
@@ -22,43 +24,11 @@ p {
   color: var(--home-page-font-color);
   letter-spacing: 1px;
   margin: 3.1% 10%;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
 }
-.form {
-  width: 90%;
-  height: 100%;
-  margin: 1% 10% 0% 10%;
-  font-weight: 300;
-  text-shadow: 0.2px 0.1px rgba(172, 172, 172, 0.6);
-  font-size: 0.9rem;
-}
-.form-element {
-  display: flex;
-  flex-direction: column;
-  margin: 1% 0%;
-}
-.button-container {
-  padding-top: 5%;
-  height: 100%;
-}
-.radio {
-  margin-left: 4%;
-  width: 3%;
-}
-input[type="radio"] {
-  background: var(--primary-color);
-}
-input,
-textarea {
-  color: var(--home-page-font-color);
-  background: var(--primary-color);
-  border-radius: 0.5rem;
-  padding: 0.7% 2%;
-  border: 1px solid rgba(172, 172, 172, 0.6);
-}
-::placeholder {
-  color: var(--home-page-font-color);
-}
-#icon {
+
+#profileicon {
   margin: 7%;
   padding: 2% 10%;
   background-color: var(--home-page-font-color);
@@ -74,23 +44,15 @@ a {
 }
 .card {
   background: var(--home-page-secondary-color);
-  width: 85%;
+  width: 90%;
   border-radius: 0.5rem;
   margin-top: 15%;
 }
-.btn {
-  border-radius: 2rem;
-  width: 30%;
-  padding: 0.5rem 0.75rem;
-  background-color: var(--button-color);
-  margin: auto 35%;
-  color: var(--home-page-font-color);
-}
-.btn:focus {
-  box-shadow: none;
+.container-fluid {
+  padding: 0%;
 }
 .card .card-img-wrap {
-  width: 40%;
+  width: 55%;
   height: auto;
   margin: 10% auto 0%;
 }
@@ -100,7 +62,8 @@ a {
   object-fit: cover;
 }
 .card-body {
-  padding: 0.5rem 0.5rem 1rem 0.5rem;
+  padding: 0rem;
+  margin-bottom: 7%;
 }
 .author {
   font-size: 0.6rem;
@@ -110,11 +73,19 @@ a {
   font-size: 0.7rem;
   font-weight: 300;
 }
-
+.header .profile {
+  margin: 2% 0% 2% 76%;
+}
+.row {
+  margin: 0%;
+}
 .card-title {
   font-size: 0.8rem;
   height: 2.2rem;
   font-weight: 500;
+  margin-bottom: 0%;
+  margin-top: 5%;
+  line-height: 1;
 }
 #booksection {
   margin: 1% 4%;
@@ -134,32 +105,64 @@ a {
   width: 0px;
   background: transparent; /* make scrollbar transparent */
 }
-@media only screen and (min-width: 768px) {
-  #logo {
-    margin-top: 15%;
-    width: 90%;
-  }
-  #navBar {
-    height: -webkit-fill-available;
-  }
-  .col-lg-3 {
-    padding: 0%;
-  }
+
+/* Add book form */
+.add-book {
+  width: 90%;
+  margin: 2% 5% 1%;
+  padding: 0% 4%;
 }
-@media only screen and (max-width: 768px) {
-  .col-md-10 {
-    margin-top: auto;
-  }
-  #logo {
-    margin: 5% 5%;
-    height: 19%;
-    width: 30%;
-  }
+h3 {
+  margin-bottom: 0%;
 }
-@media only screen and (min-width: 1024px) {
-  p {
-    font-size: 1.5rem;
-  }
+.form {
+  width: 90%;
+  height: auto;
+  margin: 5% auto 2%;
+  font-weight: 300;
+  text-shadow: 0.2px 0.1px rgba(172, 172, 172, 0.6);
+  font-size: 0.9rem;
+}
+.form-element {
+  display: flex;
+  flex-direction: column;
+  margin: 1% 0%;
+}
+.add-book .button-container {
+  padding-top: 10%;
+  display: flex;
+  justify-content: center;
+}
+
+.radio {
+  margin-left: 4%;
+  width: 3%;
+}
+input[type="radio"] {
+  background: var(--primary-color);
+}
+input,
+textarea {
+  color: var(--home-page-font-color);
+  background: var(--primary-color);
+  border-radius: 0.75rem;
+  padding: 5px 15px;
+  outline: none;
+  border: 1.5px solid rgba(172, 172, 172, 0.6);
+}
+.btn {
+  border-radius: 2rem;
+  width: 30%;
+  padding: 0.5rem 0.75rem;
+  background-color: var(--button-color);
+  /* margin: auto 35%; */
+  color: var(--home-page-font-color);
+}
+::placeholder {
+  color: var(--home-page-font-color);
+}
+.btn:focus {
+  box-shadow: none;
 }
 
 /* Book details page */
@@ -266,7 +269,8 @@ a {
   font-size: 2.5vw;
 }
 
-.contents-wrap .about-book {
+.contents-wrap .about-book,
+.contents-wrap .reviews-section {
   margin: 0% 0% 2% 5%;
 }
 .contents-wrap .about-book h3 {
@@ -280,4 +284,75 @@ a {
   margin: auto 0%;
   font-weight: 300;
   font-size: 1.5vw;
+}
+
+/* edit book's details page */
+.edit-form {
+  width: 90%;
+  margin: 2% 3% 1%;
+  padding: 0% 8%;
+}
+.edit-form .header {
+  display: grid;
+  grid-template-columns: 5% 65% 30%;
+  margin-bottom: 2%;
+}
+.edit-form .header .fa-arrow-left {
+  font-size: 2vw;
+}
+.edit-form .header .fa-trash {
+  font-size: 2vw;
+}
+.edit-form .button-container {
+  padding-top: 10%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.edit-form .button-container .cancel-button {
+  background-color: var(--home-page-secondary-color);
+  border: 0.5px solid var(--home-page-font-color);
+}
+.edit-form .button-container button:hover {
+  color: var(--home-page-font-color);
+  font-weight: 900;
+}
+.edit-form .button-container button {
+  width: 20%;
+}
+
+/*---------------Media Queries----------------------*/
+@media only screen and (min-width: 768px) {
+  #logo {
+    margin-top: 15%;
+    width: 90%;
+  }
+
+  #navBar {
+    height: -webkit-fill-available;
+  }
+  .col-lg-3 {
+    padding: 0%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .col-md-10 {
+    margin-top: auto;
+  }
+
+  #logo {
+    margin: 5% 5%;
+    height: 19%;
+    width: 30%;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  p {
+    font-size: 1.5rem;
+  }
+  .edit-form .button-container {
+    padding-top: 2%;
+  }
+  .add-book .button-container {
+    padding-top: 2%;
+  }
 }
