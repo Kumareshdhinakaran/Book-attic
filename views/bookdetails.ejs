@@ -1,0 +1,60 @@
+<%- include ('partial/navheader') %>
+<div class="section-wrap">
+  <div class="contents-wrap">
+    <h5 class="section-heading">
+      <i class="fas fa-arrow-left mr-3"></i> BOOK DETAILS
+    </h5>
+    <div class="row header-section">
+      <div class="col-md-4">
+        <div class="img-wrap">
+          <img src="<%= data.image %>" alt="<%= data.title %>" />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="book-details-wrap">
+          <div class="book-title">
+            <h3><%= data.title %></h3>
+          </div>
+          <div class="rating">
+            <span class="outer-stars">
+              <span class="inner-stars"></span>
+            </span>
+            <p>
+              <span id="rating"><%= data.rating %></span>
+              Rating
+            </p>
+          </div>
+          <div class="author">
+            <p>By <%= data.author %></p>
+          </div>
+          <div class="cost">
+            <p>&#8377;<%= data.cost %></p>
+          </div>
+          <div class="button">
+            <a href="#">
+              <button type="submit">
+                Add To Cart
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <a href="#"><i class="fas fa-pencil-alt"></i></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="about-book">
+        <h3>About the Book</h3>
+        <p><%= data.description %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="reviews-section">
+        <div class="title"></div>
+        <!-- loop through the reviews and show the details -->
+      </div>
+    </div>
+  </div>
+</div>
+<%- include ('partial/navfooter') %>

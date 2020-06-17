@@ -20,6 +20,9 @@ app.get("/index/new", function (req, res) {
   res.render("addbookpage");
 });
 
+app.get("/index/details", function (req, res) {
+  res.render("bookdetails", { data: Books[7] });
+});
 //Server listening
 app.listen(port, function () {
   console.log("Server Started successfully");

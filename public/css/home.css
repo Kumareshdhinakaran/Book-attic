@@ -72,9 +72,6 @@ ul li {
 a {
   color: var(--home-page-font-color);
 }
-.col-md-2 {
-  background: var(--home-page-secondary-color);
-}
 .card {
   background: var(--home-page-secondary-color);
   width: 85%;
@@ -127,6 +124,7 @@ a {
 }
 #navBar {
   position: fixed;
+  background: var(--home-page-secondary-color);
 }
 #logo {
   height: auto;
@@ -162,4 +160,124 @@ a {
   p {
     font-size: 1.5rem;
   }
+}
+
+/* Book details page */
+
+.col-md-4,
+.col-md-6,
+.col-md-2 {
+  padding: 0%;
+}
+.section-wrap {
+  margin: 1% 5%;
+}
+.contents-wrap {
+  padding: 1%;
+}
+.contents-wrap h5,
+.contents-wrap i {
+  font-size: 2vw;
+}
+.contents-wrap .header-section {
+  margin: 5% 0%;
+}
+.img-wrap {
+  display: block;
+  width: 80%;
+  margin: 0% auto;
+}
+.img-wrap img {
+  width: 100%;
+  height: 100%;
+  float: left;
+}
+.book-details-wrap {
+  height: 100%;
+}
+.book-details-wrap h3 {
+  letter-spacing: 1px;
+  font-weight: 400;
+  font-size: 3vw;
+}
+.book-details-wrap .rating.outer-stars {
+  display: inline-block;
+  position: relative;
+}
+
+.book-details-wrap .rating.inner-stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+}
+
+/* .book-details-wrap .rating.outer-starsr::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  color: #ccc;
+}
+
+.book-details-wrap .rating .inner-stars::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  color: #ffffff;
+} */
+.book-details-wrap .rating p {
+  font-weight: 300;
+  font-size: 1.3vw;
+  margin-bottom: 1%;
+}
+.book-details-wrap .author p {
+  margin-left: 0%;
+  margin-top: 0%;
+  font-weight: 500;
+  font-size: 2vw;
+  color: var(--button-color);
+}
+.book-details-wrap .cost p {
+  font-weight: 300;
+  font-size: 1.8rem;
+  margin: 5% 0%;
+}
+
+.book-details-wrap .button button {
+  border: none;
+  background-color: var(--button-color);
+  color: var(--home-page-font-color);
+  border-radius: 2rem;
+  outline: none;
+  width: 50%;
+  height: 5vh;
+  transition-delay: 0.4ms;
+}
+
+.book-details-wrap .button button:hover {
+  width: 55%;
+  height: 6vh;
+}
+
+.header-section .col-md-2 a i {
+  float: right;
+  font-size: 2.5vw;
+}
+
+.contents-wrap .about-book {
+  margin: 0% 0% 2% 5%;
+}
+.contents-wrap .about-book h3 {
+  font-weight: 400;
+  font-size: 2vw;
+  margin-bottom: 2%;
+  letter-spacing: 1px;
+}
+
+.contents-wrap .about-book p {
+  margin: auto 0%;
+  font-weight: 300;
+  font-size: 1.5vw;
 }
