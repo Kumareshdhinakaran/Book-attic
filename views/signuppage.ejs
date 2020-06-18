@@ -1,12 +1,13 @@
 <%- include ('partial/pagestarter.ejs')%>
 <div id="page" class="col-lg-4">
 <img id="logo" src="/static/images/logo.png" alt="logo" />
-<form>
+<form action="/register" method="POST">
   <div class="elements">
     <div class="form-group">
       <input
         class="form-control"
         type="text"
+        name = "username"
         placeholder="Username"
       />
     </div>
@@ -14,6 +15,7 @@
       <input
         class="form-control"
         type="password"
+        name = "password"
         placeholder="Password"
       />
     </div>
@@ -21,13 +23,14 @@
         <input
           class="form-control"
           type="password"
+          name = "newpassword"
           placeholder="Add New Password"
         />
       </div>
   </div>
 
   <div class="elements">
-    <button type="button" class="btn btn-default">
+    <button type="submit" class="btn btn-default">
       REGISTER
     </button>
   </div>

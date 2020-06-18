@@ -1,33 +1,30 @@
 var express = require("express"),
   app = express(),
-  Books = require("./data"),
-  port = 5000;
+  bodyParser = require("body-parser"),
+  authRoutes = require("./routes/auth"),
+  bookRoutes = require("./routes/book");
+
+//Database connectivity
+require("./config/dbConnect");
+
+//body parser
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+);
+
+//Passport Initialization
+let passportInitialize = require("./config/passport");
+passportInitialize(app);
 
 app.set("view engine", "ejs");
 app.use("/static", express.static(__dirname + "/public"));
 
-//Home route
-app.get("/", function (req, res) {
-  res.render("loginpage");
-});
-app.get("/register", function (req, res) {
-  res.render("signuppage");
-});
-app.get("/index", function (req, res) {
-  res.render("homepage", { data: Books });
-});
-app.get("/index/new", function (req, res) {
-  res.render("addbookpage", { book: undefined });
-});
+app.use("/", authRoutes);
+app.use("/books", bookRoutes);
 
-app.get("/index/details", function (req, res) {
-  res.render("bookdetails", { data: Books[7] });
-});
-
-app.get("/index/details/edit", function (req, res) {
-  res.render("editbookdetails", { book: Books[7] });
-});
 //Server listening
-app.listen(port, function () {
+app.listen(5000, function () {
   console.log("Server Started successfully");
 });
