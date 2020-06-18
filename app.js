@@ -7,6 +7,7 @@ var express = require("express"),
 //Database connectivity
 require("./config/dbConnect");
 
+require("./config/data");
 //body parser
 app.use(
   bodyParser.urlencoded({

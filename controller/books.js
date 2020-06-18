@@ -54,7 +54,7 @@ const create_book = function (request, response) {
   const bookSchema = Joi.object().keys({
     author: Joi.string().required(),
     description: Joi.string().required(),
-    image: Joi.string().required(),
+    // image: Joi.string().required(),
     title: Joi.string().required(),
     cost: Joi.string().required(),
     rating: Joi.string().required(),
