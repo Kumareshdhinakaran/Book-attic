@@ -1,27 +1,54 @@
-<%- include ('partial/navheader')%>
-<!-----------------Form for edit Book----------------------------->
-<div class="edit-form">
-  
-    <div class="header">
-        <a href="#" class="back-icon"><i class="fas fa-arrow-left "></i></a>
-        <h4>EDIT BOOK DETAIL</h4>
-      <a href="#"><i class="fas fa-trash" style="float: right;"></i></a>
-
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include ('partial/headercss')%>
+    <link rel="stylesheet" href="/static/css/home.css" />
+    <title>BookAttic</title>
+  </head>
+  <body>
+    <%- include ('partial/navheader')%>
+    <div class="form">
+      <form action="" method="">
+        <!-----------------Form for edit Book----------------------------->
+        <div class="edit-form" id="editForm">
+          <div class="header">
+            <a href="/index/details" class="back-icon"
+              ><i class="fas fa-arrow-left"></i
+            ></a>
+            <h4>EDIT BOOK DETAIL</h4>
+            <a href="#"><i class="fas fa-trash" style="float: right;"></i></a>
+          </div>
+          <%- include ('partial/bookdetailsform')%>
+          <!-----------------Submit button--------------------------->
+          <div class="button-container">
+            <button type="button" class="btn btn-default cancel-button">
+              Cancel
+            </button>
+            <button type="button" class="btn btn-default">
+              Save
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
-<%- include ('partial/bookdetailsform')%>
 
-<!-----------------Submit button--------------------------->
-    <div class="button-container">
-      <button type="button" class="btn btn-default cancel-button">
-        Cancel
-      </button>
-      <button type="button" class="btn btn-default ">
-        Save
-      </button>
-    </div>
-  </form>
-</div>
-</div>
-   
-<!---------------------Ends here ---------------------------->
-<%- include ('partial/navfooter')%>
+    <!---------------------Ends here ---------------------------->
+    <%- include ('partial/navfooter')%>
+    <script>
+      if (document.getElementById("editForm")) {
+        document.getElementById("book-title").value = "<%= book.title %>";
+        document.getElementById("book-author").value = "<%= book.author%>";
+        document.getElementById("book-cost").value = "<%= book.cost%>";
+        document.getElementById("book-rating").value = "<%= book.rating %>";
+        document.getElementById("book-about").value = "<%= book.description %>";
+        const rbs = document.querySelectorAll('input[name="book[category]"]');
+        for (const rb of rbs) {
+          if (rb.value.toLowerCase() === "<%= book.category %>") {
+            rb.checked = true;
+            break;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

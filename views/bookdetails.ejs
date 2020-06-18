@@ -1,74 +1,85 @@
-<%- include ('partial/navheader') %>
-<div class="section-wrap">
-  <div class="contents-wrap">
-    <h5 class="section-heading">
-      <i class="fas fa-arrow-left mr-3"></i> BOOK DETAILS
-    </h5>
-    <div class="row header-section">
-      <div class="col-md-4">
-        <div class="img-wrap">
-          <img src="<%= data.image %>" alt="<%= data.title %>" />
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include ('partial/headercss')%>
+    <link rel="stylesheet" href="/static/css/home.css" />
+    <title>BookAttic</title>
+  </head>
+  <body>
+    <%- include ('partial/navheader')%>
+    <div class="section-wrap">
+      <div class="contents-wrap">
+        <h5 class="section-heading">
+          <a href="/index"><i class="fas fa-arrow-left mr-3"></i></a> BOOK
+          DETAILS
+        </h5>
+        <div class="row header-section">
+          <div class="col-md-4">
+            <div class="img-wrap">
+              <img src="<%= data.image %>" alt="<%= data.title %>" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="book-details-wrap">
+              <div class="book-title">
+                <h3><%= data.title %></h3>
+              </div>
+              <div class="rating">
+                <span class="outer-stars">
+                  <span class="inner-stars"></span>
+                </span>
+                <p>
+                  <span id="rating"><%= data.rating %></span>
+                  Rating
+                </p>
+              </div>
+              <div class="author">
+                <p>By <%= data.author %></p>
+              </div>
+              <div class="cost">
+                <p>&#8377;<%= data.cost %></p>
+              </div>
+              <div class="button">
+                <a href="#">
+                  <button type="submit">
+                    Add To Cart
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <a href="/index/details/edit"><i class="fas fa-pencil-alt"></i></a>
+          </div>
         </div>
-      </div>
-      <div class="col-md-6">
-        <div class="book-details-wrap">
-          <div class="book-title">
-            <h3><%= data.title %></h3>
-          </div>
-          <div class="rating">
-            <span class="outer-stars">
-              <span class="inner-stars"></span>
-            </span>
-            <p>
-              <span id="rating"><%= data.rating %></span>
-              Rating
-            </p>
-          </div>
-          <div class="author">
-            <p>By <%= data.author %></p>
-          </div>
-          <div class="cost">
-            <p>&#8377;<%= data.cost %></p>
-          </div>
-          <div class="button">
-            <a href="#">
-              <button type="submit">
-                Add To Cart
-              </button>
-            </a>
+        <div class="row">
+          <div class="about-book">
+            <h3>About the Book</h3>
+            <p><%= data.description %></p>
           </div>
         </div>
-      </div>
-      <div class="col-md-2">
-        <a href="#"><i class="fas fa-pencil-alt"></i></a>
+        <div class="row">
+          <div class="reviews-section">
+            <div class="title">
+              <h3>Reviews</h3>
+            </div>
+            <div class="review">
+              <% data.reviews.forEach(function(review){ %>
+              <div class="review-title">
+                <%= review.title %>
+              </div>
+              <div class="review-author">
+                <%= review.author %>
+              </div>
+              <div class="review">
+                <%= review.text %>
+              </div>
+              <% }); %>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="row">
-      <div class="about-book">
-        <h3>About the Book</h3>
-        <p><%= data.description %></p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="reviews-section">
-        <div class="title">
-          <h3>Reviews</h3>
-        </div>
-        <div class="review">
-          <% data.reviews.forEach(function(review){ %>
-          <div class="review-title">
-            <%= review.title %>
-          </div>
-          <div class="review-author">
-            <%= review.author 5>
-          </div>
-          <div class="review">
-            <%= review.text %>
-          </div>
-          <% }) %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<%- include ('partial/navfooter') %>
+    <%- include ('partial/navfooter') %>
+  </body>
+</html>

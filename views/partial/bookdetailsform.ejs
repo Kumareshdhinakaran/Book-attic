@@ -1,23 +1,27 @@
-<div class="form">
-  <form action="" method="">
+
     <!-------------Title of the Book -------------------->
     <div class="form-element">
       <label for="Book title">Book Title</label>
-      <input type="text" />
+      <input type="text" name="book[title]" id="book-title" />
     </div>
 
     <!------------- Author of the book--------------------->
     <div class="form-element">
       <label for="author">Author</label>
-      <input type="text" />
+      <input type="text" name="book[author]" id="book-author" />
     </div>
 
     <!-------------- category of the book ------------------>
     <div class="mt-3 mb-1">
       <label for="category">Category</label>
-      <input type="radio" class="radio" name="category" value="Fiction" />
+      <input type="radio" class="radio" name="book[category]" value="Fiction" />
       <label for="Fiction" class="label">Fiction</label>
-      <input type="radio" class="radio" name="category" value="Non Fiction" />
+      <input
+        type="radio"
+        class="radio"
+        name="book[category]"
+        value="NonFiction"
+      />
       <label for="Non Fiction" class="label">Non Fiction</label>
     </div>
 
@@ -26,20 +30,31 @@
       <!---------- price of the book ---------------->
       <div class="form-element col-3 m-0">
         <label for="price">Price</label>
-        <input type="number" />
+        <input type="number" name="book[cost]" id="book-cost" />
       </div>
 
       <!----------- rating of the book --------------->
       <div class="form-element col-3 ml-auto mr-auto mt-0">
         <label for="rating">Rating</label>
-        <input type="number" min="0" max="5" step="0.1" />
+        <input
+          type="number"
+          name="book[rating]"
+          id="book-rating"
+          min="0"
+          max="5"
+          step="0.1"
+        />
       </div>
     </div>
 
     <!----------------Description of the Book------------------->
     <div class="form-element">
       <label for="about">About the Book</label>
-      <textarea name="about" cols="30" rows="5"></textarea>
+      <textarea
+        name="book[description]"
+        id="book-about"
+        cols="30"
+        rows="5"
+      ></textarea>
     </div>
-  </form>
-</div>
+

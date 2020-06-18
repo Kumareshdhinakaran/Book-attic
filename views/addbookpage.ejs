@@ -1,18 +1,30 @@
-<%- include ('partial/navheader')%>
-<div class="add-book">
-<!-----------------Form for new Book----------------------------->
-<h3>ADD BOOK</h3>
-<%- include ('partial/bookdetailsform')%>
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include ('partial/headercss')%>
+    <link rel="stylesheet" href="/static/css/home.css" />
+    <title>BookAttic</title>
+  </head>
+  <body>
+    <%- include ('partial/navheader')%>
+    <div class="form">
+      <form action="" method="">
+        <div class="add-book">
+          <!-----------------Form for new Book----------------------------->
+          <h3>ADD BOOK</h3>
+          <%- include ('partial/bookdetailsform')%>
 
-<!-----------------Submit button--------------------------->
-    <div class="button-container">
-      <button type="button" class="btn btn-default">
-        Add Book
-      </button>
+          <!-----------------Submit button--------------------------->
+          <div class="button-container">
+            <button type="button" class="btn btn-default">
+              Add Book
+            </button>
+          </div>
+        </div>
+      </form>
+      <!---------------------Ends here ---------------------------->
     </div>
-  </form>
-</div>
-<!---------------------Ends here ---------------------------->
-</div>
 
-<%- include ('partial/navfooter')%>
+    <%- include ('partial/navfooter')%>
+  </body>
+</html>

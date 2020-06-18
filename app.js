@@ -17,7 +17,7 @@ app.get("/index", function (req, res) {
   res.render("homepage", { data: Books });
 });
 app.get("/index/new", function (req, res) {
-  res.render("addbookpage");
+  res.render("addbookpage", { book: undefined });
 });
 
 app.get("/index/details", function (req, res) {
@@ -25,7 +25,7 @@ app.get("/index/details", function (req, res) {
 });
 
 app.get("/index/details/edit", function (req, res) {
-  res.render("editbookdetails");
+  res.render("editbookdetails", { book: Books[7] });
 });
 //Server listening
 app.listen(port, function () {

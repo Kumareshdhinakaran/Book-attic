@@ -1,24 +1,34 @@
-<%- include ('partial/navheader') %>
-<div id="booksection">
-  <!--------------------------Fiction Books---------------------------------->
-  <div id="fiction">
-    <h2>FICTION</h2>
-    <div class="row">
-      <!---------Looping through database and display details of fiction books-------------->
-      <% data.forEach(function(book){ if(book.category === "fiction"){ %>
-      <%-include ('partial/cardelement',{book:book}) %> <%}});%>
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include ('partial/headercss')%>
+    <link rel="stylesheet" href="/static/css/home.css" />
+    <title>BookAttic</title>
+  </head>
+  <body>
+    <%- include ('partial/navheader')%>
+    <div id="booksection">
+      <!--------------------------Fiction Books---------------------------------->
+      <div id="fiction">
+        <h2>FICTION</h2>
+        <div class="row">
+          <!---------Looping through database and display details of fiction books-------------->
+          <% data.forEach(function(book){ if(book.category === "fiction"){ %>
+          <%-include ('partial/cardelement',{book:book}) %> <%}});%>
+        </div>
+      </div>
+      <!----------------------------Ends here--------------------------------------->
+      <!--------------------------Non Fiction Books---------------------------------->
+      <div id="nonfiction">
+        <h2>NON FICTION</h2>
+        <div class="row">
+          <!---------Looping through database and display details of non fiction books-------------->
+          <% data.forEach(function(book){ if(book.category === "nonfiction"){ %>
+          <%-include ('partial/cardelement', {book:book}) %> <%}});%>
+        </div>
+      </div>
+      <!-----------------------Ends here--------------------------------->
     </div>
-  </div>
-  <!----------------------------Ends here--------------------------------------->
-  <!--------------------------Non Fiction Books---------------------------------->
-  <div id="nonfiction">
-    <h2>NON FICTION</h2>
-    <div class="row">
-      <!---------Looping through database and display details of non fiction books-------------->
-      <% data.forEach(function(book){ if(book.category === "nonfiction"){ %>
-      <%-include ('partial/cardelement', {book:book}) %> <%}});%>
-    </div>
-  </div>
-  <!-----------------------Ends here--------------------------------->
-</div>
-<%- include ('partial/navfooter') %>
+    <%- include ('partial/navfooter') %>
+  </body>
+</html>
