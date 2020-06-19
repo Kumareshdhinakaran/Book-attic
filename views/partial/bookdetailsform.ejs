@@ -1,18 +1,18 @@
 <!-------------Title of the Book -------------------->
 <div class="form-element">
   <label for="Book title">Book Title</label>
-  <input type="text" name="book[title]" id="book-title" />
+  <input type="text" name="book[title]" id="book-title" required />
 </div>
 
 <!------------- Author of the book--------------------->
 <div class="form-element">
   <label for="author">Author</label>
-  <input type="text" name="book[author]" id="book-author" />
+  <input type="text" name="book[author]" id="book-author" required />
 </div>
 
 <div class="form-element">
   <label for="image">Image</label>
-  <input type="text" name="book[image]" id="book-image" />
+  <input type="text" name="book[image]" id="book-image" required />
 </div>
 
 <!-------------- category of the book ------------------>
@@ -29,7 +29,7 @@
   <!---------- price of the book ---------------->
   <div class="form-element col-3 m-0">
     <label for="price">Price</label>
-    <input type="number" name="book[cost]" id="book-cost" />
+    <input type="number" name="book[cost]" id="book-cost" required />
   </div>
 
   <!----------- rating of the book --------------->
@@ -41,7 +41,8 @@
       id="book-rating"
       min="0"
       max="5"
-      step="0.1"
+      step="0.5"
+      required
     />
   </div>
 </div>
@@ -54,5 +55,6 @@
     id="book-about"
     cols="30"
     rows="5"
+    required
   ></textarea>
 </div>

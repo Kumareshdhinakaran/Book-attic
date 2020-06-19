@@ -4,14 +4,23 @@
     <%- include ('partial/headercss')%>
     <link rel="stylesheet" href="/static/css/home.css" />
     <title>BookAttic</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../utils/ratings.js"></script>
+    <script>
+      $(function () {
+        $(".stars").stars();
+      });
+    </script>
   </head>
   <body>
     <%- include ('partial/navheader')%>
     <div class="section-wrap">
       <div class="contents-wrap">
         <h5 class="section-heading">
-          <a href="/books"><i class="fas fa-arrow-left mr-3"></i></a> BOOK
-          DETAILS
+          <a href="/books">
+            <img src="/static/images/Path.svg" class="shape-icon" alt="" />
+          </a>
+          BOOK DETAILS
         </h5>
         <div class="row header-section">
           <div class="col-md-4">
@@ -25,19 +34,26 @@
                 <h3><%= data.title %></h3>
               </div>
               <div class="rating">
-                <span class="outer-stars">
-                  <span class="inner-stars"></span>
-                </span>
-                <p>
-                  <span id="rating"><%= data.rating %></span>
-                  Rating
+                  <span class="stars">
+                    <% var rating = Math.floor(Number(data.rating)); %>
+                    <% for(var i = 0;i < rating; i++) {%>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    <% }%>
+                    <% if (Number(data.rating) - rating === 0.5){%>
+                      <i class="fa fa-star-half" aria-hidden="true"></i>
+                    <%} %>
+                  </span>
+                  <span class="rating-number"> <%= data.rating %>Rating</span>
+                  
                 </p>
               </div>
               <div class="author">
                 <p>By <%= data.author %></p>
               </div>
               <div class="cost">
-                <p>&#8377;<%= data.cost %></p>
+                <p>
+                  <img src="/static/images/india.svg" alt="" /><%= data.cost %>
+                </p>
               </div>
               <div class="button">
                 <a href="#">
@@ -48,10 +64,10 @@
               </div>
             </div>
           </div>
-          <div class="col-md-2">
+          <div class="col-md-2 rightSide">
             <a href="/books/<%= data._id %>/edit"
-              ><i class="fas fa-pencil-alt"></i
-            ></a>
+              ><img class="edit-icon" src="/static/images/shape.svg" alt=""
+            /></a>
           </div>
         </div>
         <div class="row">
@@ -67,15 +83,18 @@
             </div>
             <div class="review">
               <% data.reviews.forEach(function(review){ %>
-              <div class="review-title">
-                <%= review.title %>
+              <div class="contents">
+                <div class="review-title">
+                  <%= review.title %>
+                </div>
+                <div class="review-author">
+                  By <%= review.author %>
+                </div>
+                <div class="text">
+                  <%= review.text %>
+                </div>
               </div>
-              <div class="review-author">
-                <%= review.author %>
-              </div>
-              <div class="review">
-                <%= review.text %>
-              </div>
+              <hr />
               <% }); %>
             </div>
           </div>
@@ -83,5 +102,6 @@
       </div>
     </div>
     <%- include ('partial/navfooter') %>
+    <script></script>
   </body>
 </html>

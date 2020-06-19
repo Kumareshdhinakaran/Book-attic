@@ -72,6 +72,16 @@ a {
 .rating {
   font-size: 0.7rem;
   font-weight: 300;
+  margin-top: 2%;
+}
+.rating .rating-number {
+  font-size: 1.3rem;
+  margin-left: 1%;
+}
+.rating i {
+  font-size: 1.3rem;
+  color: #e4d926;
+  border: 0.2px solid black;
 }
 .header .profile {
   margin: 2% 0% auto 65%;
@@ -178,9 +188,11 @@ textarea {
 .contents-wrap {
   padding: 1%;
 }
-.contents-wrap h5,
-.contents-wrap i {
+.contents-wrap h5 {
   font-size: 2vw;
+}
+.contents-wrap .shape-icon {
+  margin-right: 2%;
 }
 .contents-wrap .header-section {
   margin: 5% 0%;
@@ -217,24 +229,12 @@ textarea {
   width: 0;
 }
 
-/* .book-details-wrap .rating.outer-starsr::before {
-  content: "\f005 \f005 \f005 \f005 \f005";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 400;
-  color: #ccc;
-}
-
-.book-details-wrap .rating .inner-stars::before {
-  content: "\f005 \f005 \f005 \f005 \f005";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 400;
-  color: #ffffff;
-} */
 .book-details-wrap .rating p {
   font-weight: 300;
   font-size: 1.3vw;
   margin: 5% 25% 1%;
 }
+
 .book-details-wrap .author p {
   margin-left: 0%;
   margin-top: 0%;
@@ -271,7 +271,7 @@ textarea {
   height: 8vh;
 }
 
-.header-section .col-md-2 a i {
+.header-section .edit-icon {
   float: right;
   font-size: 2.5vw;
 }
@@ -279,6 +279,7 @@ textarea {
 .contents-wrap .about-book,
 .contents-wrap .reviews-section {
   margin: 0% 0% 2% 5%;
+  width: 100%;
 }
 .contents-wrap .about-book h3 {
   font-weight: 400;
@@ -293,6 +294,36 @@ textarea {
   font-size: 1.5vw;
 }
 
+.reviews-section .title {
+  font-weight: 400;
+  font-size: 2vw;
+  margin-bottom: 2%;
+  letter-spacing: 1px;
+}
+.reviews-section .review {
+  margin-top: 5%;
+  width: 100%;
+}
+.reviews-section .review .review-title {
+  font-size: 1vw;
+  letter-spacing: 1px;
+}
+hr {
+  border-top: 0.4px solid white;
+}
+
+.reviews-section .review .review-author {
+  font-size: 0.98vw;
+  letter-spacing: 1px;
+  margin: 0.5% 0%;
+  color: var(--button-color);
+}
+.reviews-section .review .text {
+  font-size: 0.8vw;
+  letter-spacing: 1.3px;
+  font-weight: 300;
+}
+
 /* edit book's details page */
 .edit-form {
   width: 90%;
@@ -304,11 +335,15 @@ textarea {
   grid-template-columns: 5% 65% 30%;
   margin-bottom: 2%;
 }
-.edit-form .header .fa-arrow-left {
-  font-size: 2vw;
+.edit-form .header .shape-icon {
+  margin-left: -200%;
 }
-.edit-form .header .fa-trash {
-  font-size: 2vw;
+.edit-form .header h4 {
+  margin-left: -8%;
+}
+.edit-form .header > form button {
+  background: none;
+  border: none;
 }
 .edit-form .button-container {
   padding-top: 10%;

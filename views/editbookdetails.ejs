@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <%- include ('partial/headercss')%>
     <link rel="stylesheet" href="/static/css/home.css" />
     <title>BookAttic</title>
-  </head>
-  <body>
-    <%- include ('partial/navheader')%>
-    <div class="form">
+</head>
+<body>
+<%- include ('partial/navheader')%>
+<div class="form">
         <!-----------------Form for edit Book----------------------------->
         <div class="edit-form" id="editForm">
           <div class="header">
-            <a href="/books/<%= book._id %>" class="back-icon"><i class="fas fa-arrow-left"></i></a>
+            <a href="/books/<%= book._id %>" class="back-icon">
+              <img src="/static/images/Path.svg" class="shape-icon" alt="">
+            </a>
             <h4>EDIT BOOK DETAIL</h4>
             <form action="/books/<%=book._id%>?_method=DELETE" method="POST">
-              <button type="submit"><i class="fas fa-trash" style="float: right;"></button>
+              <button type="submit" style="float: right;">
+                <img class="delete-icon" src="/static/images/delete.svg" alt="">
+              </button>
             </form>
           </div>
-          <form action="/books/<%=book._id%>?_method=PUT" method="POST"></form>
+          <form action="/books/<%=book._id%>?_method=PUT" method="POST">
             <%- include ('partial/bookdetailsform')%>
             <!-----------------Submit button--------------------------->
             <div class="button-container">
@@ -26,9 +30,9 @@
                   Cancel
                 </button>
               </a>
-                <button type="submit" class="btn btn-default">
+              <button type="submit" class="btn btn-default">
                   Save
-                </button>
+              </button>
             </div>
           </form>
         <div>

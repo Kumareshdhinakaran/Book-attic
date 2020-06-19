@@ -11,8 +11,6 @@ const get_book_list_page = (req, res) => {
   User.findById(req.user.id)
     .populate("books")
     .exec(function (err, user) {
-      console.log(user);
-      console.log(user.books);
       res.render("homepage", {
         data: user.books,
       });

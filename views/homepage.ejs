@@ -6,7 +6,8 @@
     <title>BookAttic</title>
   </head>
   <body>
-    <%- include ('partial/navheader')%>
+    <%- include ('partial/navheader')%> <% console.log(data) %> <% if
+    (data.length > 0){ %>
     <div id="booksection">
       <!--------------------------Fiction Books---------------------------------->
       <div id="fiction">
@@ -29,6 +30,8 @@
       </div>
       <!-----------------------Ends here--------------------------------->
     </div>
-    <%- include ('partial/navfooter') %>
+    <%}else{%>
+    <h2 class="m-5">There is no records to display</h2>
+    <%}%> <%- include ('partial/navfooter') %>
   </body>
 </html>
