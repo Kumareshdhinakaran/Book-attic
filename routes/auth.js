@@ -13,17 +13,22 @@ router.post("/register", function (req, res) {
   var newUser = new User({
     username: req.body.username,
   });
-  User.register(newUser, req.body.password, function (err, user) {
-    if (err) {
-      console.log("Error in registeration: ", err);
-      req.flash("error", err.message);
-      return res.render("signuppage");
-    }
-    passport.authenticate("local")(req, res, function () {
-      req.flash("success", "Welcome to Book Attic " + user.username);
-      res.redirect("/books");
+  if (req.body.password === req.body.newpassword) {
+    User.register(newUser, req.body.password, function (err, user) {
+      if (err) {
+        console.log("Error in registeration: ", err);
+        req.flash("error", err.message);
+        res.redirect("/register");
+      }
+      passport.authenticate("local")(req, res, function () {
+        req.flash("success", "Welcome to Book Attic " + user.username);
+        res.redirect("/books");
+      });
     });
-  });
+  } else {
+    req.flash("error", "Two passwords must be same");
+    res.redirect("/register");
+  }
 });
 
 //show login form
@@ -35,10 +40,10 @@ router.get("/", function (req, res) {
 router.post(
   "/",
   passport.authenticate("local", {
+    failureFlash: "You are not register yet",
     successRedirect: "/books",
     failureRedirect: "/",
-  }),
-  function (req, res) {}
+  })
 );
 
 // logout route

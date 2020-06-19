@@ -4,7 +4,7 @@ const controller = require("../controller/books");
 const middleware = require("../middleware/functions");
 
 //INDEX - SHOW ALL BOOKS
-router.get("/", controller.get_book_list_page);
+router.get("/", middleware.is_logged_in, controller.get_book_list_page);
 
 //CREATE - ADD NEW BOOK TO THE EXISTING COLLECTION
 router.post("/", middleware.is_logged_in, controller.create_book);
@@ -13,7 +13,7 @@ router.post("/", middleware.is_logged_in, controller.create_book);
 router.get("/new", middleware.is_logged_in, controller.new_book_page);
 
 //SHOW - show more details about each book
-router.get("/:id", controller.get_book_page);
+router.get("/:id", middleware.is_logged_in, controller.get_book_page);
 
 // EDIT BOOK ROUTE
 router.get(

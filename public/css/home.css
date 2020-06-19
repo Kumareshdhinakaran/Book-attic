@@ -74,7 +74,7 @@ a {
   font-weight: 300;
 }
 .header .profile {
-  margin: 2% 0% 2% 76%;
+  margin: 2% 0% auto 65%;
 }
 .row {
   margin: 0%;
@@ -318,6 +318,7 @@ textarea {
 .edit-form .button-container .cancel-button {
   background-color: var(--home-page-secondary-color);
   border: 0.5px solid var(--home-page-font-color);
+  width: 100%;
 }
 .edit-form .button-container button:hover {
   color: var(--home-page-font-color);

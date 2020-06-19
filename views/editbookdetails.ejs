@@ -8,29 +8,31 @@
   <body>
     <%- include ('partial/navheader')%>
     <div class="form">
-      <form action="/books/<%=data._id%>" method="POST">
         <!-----------------Form for edit Book----------------------------->
         <div class="edit-form" id="editForm">
           <div class="header">
-            <a href="/index/details" class="back-icon"
-              ><i class="fas fa-arrow-left"></i
-            ></a>
+            <a href="/books/<%= book._id %>" class="back-icon"><i class="fas fa-arrow-left"></i></a>
             <h4>EDIT BOOK DETAIL</h4>
-            <a href="#"><i class="fas fa-trash" style="float: right;"></i></a>
+            <form action="/books/<%=book._id%>?_method=DELETE" method="POST">
+              <button type="submit"><i class="fas fa-trash" style="float: right;"></button>
+            </form>
           </div>
-          <%- include ('partial/bookdetailsform')%>
-          <!-----------------Submit button--------------------------->
-          <div class="button-container">
-            <button type="button" class="btn btn-default cancel-button">
-              Cancel
-            </button>
-            <button type="button" class="btn btn-default">
-              Save
-            </button>
-          </div>
-        </div>
-      </form>
-    </div>
+          <form action="/books/<%=book._id%>?_method=PUT" method="POST"></form>
+            <%- include ('partial/bookdetailsform')%>
+            <!-----------------Submit button--------------------------->
+            <div class="button-container">
+              <a href="/books/<%= book._id%>">
+                <button type="button" class="btn btn-default cancel-button">
+                  Cancel
+                </button>
+              </a>
+                <button type="submit" class="btn btn-default">
+                  Save
+                </button>
+            </div>
+          </form>
+        <div>
+      </div>
 
     <!---------------------Ends here ---------------------------->
     <%- include ('partial/navfooter')%>
@@ -38,6 +40,7 @@
       if (document.getElementById("editForm")) {
         document.getElementById("book-title").value = "<%= book.title %>";
         document.getElementById("book-author").value = "<%= book.author%>";
+        document.getElementById("book-image").value = "<%= book.image%>";
         document.getElementById("book-cost").value = "<%= book.cost%>";
         document.getElementById("book-rating").value = "<%= book.rating %>";
         document.getElementById("book-about").value = "<%= book.description %>";

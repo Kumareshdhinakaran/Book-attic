@@ -1,12 +1,10 @@
 let User = require("../models/user"),
   passport = require("passport"),
   LocalStrategy = require("passport-local"),
+  cookieParser = require("cookie-parser"),
   flash = require("connect-flash");
 
 module.exports = (app) => {
-  // Use Flash Middleware
-  app.use(flash());
-
   // PASSPORT CONFIGURATION
   app.use(
     require("express-session")({
@@ -15,6 +13,13 @@ module.exports = (app) => {
       saveUninitialized: false,
     })
   );
+
+  //Cookieparser setup
+  app.use(cookieParser("secret"));
+
+  // Use Flash Middleware
+  app.use(flash());
+
   app.use(passport.initialize());
   app.use(passport.session());
   passport.use(new LocalStrategy(User.authenticate()));

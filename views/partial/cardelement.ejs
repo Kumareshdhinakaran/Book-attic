@@ -1,20 +1,22 @@
 <div class="col-lg-3 col-sm-4">
-  <!-- card component for each book -->
-  <div class="card">
-    <!---------Image of the book----------->
-    <div class="card-img-wrap">
-      <img class="card-img-top" src="<%= book.image %>" alt="" />
+  <a href="/books/<%= book._id %>">
+    <!-- card component for each book -->
+    <div class="card">
+      <!---------Image of the book----------->
+      <div class="card-img-wrap">
+        <img class="card-img-top" src="<%= book.image %>" alt="" />
+      </div>
+      <!-----------Details of the book----------->
+      <div class="card-body">
+        <p class="card-title"><%= book.title %></p>
+        <p class="card-text author">
+          by <%= book.author %>
+        </p>
+        <p class="card-text rating">
+          <%= book.rating %> rating
+          <span class="float-right">$<%= book.cost %></span>
+        </p>
+      </div>
     </div>
-    <!-----------Details of the book----------->
-    <div class="card-body">
-      <p class="card-title"><%= book.title %></p>
-      <p class="card-text author">
-        by <%= book.author %>
-      </p>
-      <p class="card-text rating">
-        <%= book.rating %> rating
-        <span class="float-right">$<%= book.cost %></span>
-      </p>
-    </div>
-  </div>
+  </a>
 </div>

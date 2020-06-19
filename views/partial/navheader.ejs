@@ -11,7 +11,20 @@
       </div>
     </div>
     <div class="col-md-10 ml-md-auto mt-sm-auto">
+      <div class="container">
+        <% if(error && error.length > 0){ %>
+        <div class="alert alert-danger" role="alert">
+          <%= error %>
+        </div>
+        <% } %> <% if(success && success.length > 0){ %>
+        <div class="alert alert-success" role="alert">
+          <%= success %>
+        </div>
+        <% } %>
+      </div>
       <div class="row header">
-        <p class="profile">Hello, Kumaresh <span id="profileicon"></span></p>
+        <p class="profile">
+          Hello, <%= currentUser.username %> <span id="profileicon"></span>
+        </p>
       </div>
       <div class="row">

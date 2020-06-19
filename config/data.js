@@ -226,13 +226,13 @@ var books = [
 var mongoose = require("mongoose");
 var Book = require("../models/book");
 
-Book.deleteMany();
+Book.deleteMany({});
 books.forEach(function (book) {
   Book.create(book, function (err, inserted) {
     if (err) {
       console.log(err);
-    } else {
-      console.log(inserted);
     }
   });
 });
+
+module.exports = Book;

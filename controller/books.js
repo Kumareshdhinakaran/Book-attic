@@ -1,4 +1,5 @@
 const Book = require("../models/book");
+const User = require("../models/user");
 const Joi = require("joi");
 
 /**
@@ -6,55 +7,53 @@ const Joi = require("joi");
  * @param {*} request
  * @param {*} response
  */
-const get_book_list_page = (request, response) => {
-  // Get all Books from DB
-  Book.find({}, function (err, allBooks) {
-    if (err) {
-      console.error(err);
-    } else {
-      console.log("In get_book_list_page: ", allBooks);
-      response.render("homepage", {
-        data: allBooks,
+const get_book_list_page = (req, res) => {
+  User.findById(req.user.id)
+    .populate("books")
+    .exec(function (err, user) {
+      console.log(user);
+      console.log(user.books);
+      res.render("homepage", {
+        data: user.books,
       });
-    }
-  });
+    });
+  // Get all Books from DB
 };
 
-const new_book_page = function (request, response) {
-  response.render("addbookpage");
+const new_book_page = function (req, res) {
+  res.render("addbookpage");
 };
 
-const get_book_page = function (request, response) {
+const get_book_page = function (req, res) {
   //find the book with provided ID
-  Book.findById(request.params.id, function (err, foundBook) {
+  Book.findById(req.params.id, function (err, foundBook) {
     if (err) {
       console.log(err);
     } else {
-      console.log(foundBook);
-      //render show template with that campground
-      response.render("bookdetails", {
+      //render show template with that book
+      res.render("bookdetails", {
         data: foundBook,
       });
     }
   });
 };
 
-const edit_book_page = function (request, response) {
-  Book.findById(request.params.id, function (err, foundBook) {
-    response.render("editbookdetails", {
-      data: foundBook,
+const edit_book_page = function (req, res) {
+  Book.findById(req.params.id, function (err, foundBook) {
+    res.render("editbookdetails", {
+      book: foundBook,
     });
   });
 };
 
-const create_book = function (request, response) {
-  // get data from form and add to campgrounds array
-  const { body } = request.body;
+const create_book = function (req, res) {
+  // get data from form and add to book array
+  const { body } = req.body.book;
 
   const bookSchema = Joi.object().keys({
     author: Joi.string().required(),
     description: Joi.string().required(),
-    // image: Joi.string().required(),
+    image: Joi.string().required(),
     title: Joi.string().required(),
     cost: Joi.string().required(),
     rating: Joi.string().required(),
@@ -69,7 +68,7 @@ const create_book = function (request, response) {
     request.flash("error", message);
     response.redirect("/books");
   } else {
-    var newBook = body.book;
+    var newBook = req.body.book;
     (newBook.reviews = [
       {
         title: "Amazing Book",
@@ -84,22 +83,23 @@ const create_book = function (request, response) {
           "The book was really amazing. I recomment all buyers who loves reading to this one",
       },
     ]),
-      // Create a new campground and save to DB
+      // Create a new book and save to DB
       Book.create(newBook, function (err, newlyCreated) {
         if (err) {
           console.log(err);
         } else {
-          //redirect back to campgrounds page
-          console.log(newlyCreated);
-          response.redirect("/books");
+          //redirect back to book page
+          req.user.books.push(newlyCreated);
+          req.user.save();
+          res.redirect("/books");
         }
       });
   }
 };
 
-const update_book = function (request, response) {
+const update_book = function (req, res) {
   // find and update the correct campground
-  Campground.findByIdAndUpdate(request.params.id, request.body.book, function (
+  Book.findByIdAndUpdate(req.params.id, req.body.book, function (
     err,
     updatedBook
   ) {
@@ -107,17 +107,18 @@ const update_book = function (request, response) {
       response.redirect("/books");
     } else {
       //redirect somewhere(show page)
-      response.redirect(`books/${request.params.id}`);
+      res.redirect(`/books/${req.params.id}`);
     }
   });
 };
 
-const delete_book = function (request, response) {
-  Book.findByIdAndRemove(request.params.id, function (err) {
+const delete_book = function (req, res) {
+  Book.findByIdAndRemove(req.params.id, function (err, deleted) {
+    console.log(deleted);
     if (err) {
       console.log(err);
     }
-    response.redirect("/books");
+    res.redirect("/books");
   });
 };
 
