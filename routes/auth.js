@@ -13,6 +13,7 @@ router.post("/register", function (req, res) {
   var newUser = new User({
     username: req.body.username,
   });
+  
   if (req.body.password === req.body.newpassword) {
     User.register(newUser, req.body.password, function (err, user) {
       if (err) {

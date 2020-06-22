@@ -17,16 +17,26 @@ app.use(
   })
 );
 
+//To override the post request as put and delete
 app.use(methodOverride("_method"));
+
 //Passport Initialization
 let passportInitialize = require("./config/passport");
 passportInitialize(app);
 
+//View Engine setup - EJS
 app.set("view engine", "ejs");
+
+//Static folder(accesible  "/static/folder")
 app.use("/static", express.static(__dirname + "/public"));
 
+//Authentication
 app.use("/", authRoutes);
+
+// Book Routes
 app.use("/books", bookRoutes);
+
+//Other routes
 app.use("*", function (req, res) {
   req.flash("error", "Sorry there is no such routes!!!");
   res.redirect("/");

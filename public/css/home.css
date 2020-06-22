@@ -47,6 +47,8 @@ a {
   width: 90%;
   border-radius: 0.5rem;
   margin-top: 15%;
+  transform-origin: 50% 50%;
+  transition-duration: 0.2s;
 }
 .container-fluid {
   padding: 0%;
@@ -114,6 +116,14 @@ a {
 ::-webkit-scrollbar {
   width: 0px;
   background: transparent; /* make scrollbar transparent */
+}
+.card-container a:hover {
+  text-decoration: none;
+  color: var(--home-page-font-color);
+}
+
+.card-container .card:hover {
+  transform: scale(1.2);
 }
 
 /* Add book form */

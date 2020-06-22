@@ -14,7 +14,7 @@ const check_book_ownership = function (req, res, next) {
         req.flash(ERROR_MSG.FLASH_ERROR_KEY, ERROR_MSG.BOOK.NOT_FOUND);
         res.redirect("back");
       } else {
-        // does user own the campground?
+        // does user own the book?
         next();
       }
     });

@@ -11,17 +11,19 @@ const get_book_list_page = (req, res) => {
   User.findById(req.user.id)
     .populate("books")
     .exec(function (err, user) {
-      res.render("homepage", {
+      res.render("books/homepage", {
         data: user.books,
       });
     });
   // Get all Books from DB
 };
 
+//Add book form
 const new_book_page = function (req, res) {
-  res.render("addbookpage");
+  res.render("books/addbookpage");
 };
 
+//Get details of specific Book
 const get_book_page = function (req, res) {
   //find the book with provided ID
   Book.findById(req.params.id, function (err, foundBook) {
@@ -29,20 +31,23 @@ const get_book_page = function (req, res) {
       console.log(err);
     } else {
       //render show template with that book
-      res.render("bookdetails", {
+      res.render("books/bookdetails", {
         data: foundBook,
       });
     }
   });
 };
 
+//Edit form
 const edit_book_page = function (req, res) {
   Book.findById(req.params.id, function (err, foundBook) {
-    res.render("editbookdetails", {
+    res.render("books/editbookdetails", {
       book: foundBook,
     });
   });
 };
+
+// Services
 
 const create_book = function (req, res) {
   // get data from form and add to book array
@@ -96,7 +101,7 @@ const create_book = function (req, res) {
 };
 
 const update_book = function (req, res) {
-  // find and update the correct campground
+  // find and update the correct book
   Book.findByIdAndUpdate(req.params.id, req.body.book, function (
     err,
     updatedBook
@@ -112,7 +117,6 @@ const update_book = function (req, res) {
 
 const delete_book = function (req, res) {
   Book.findByIdAndRemove(req.params.id, function (err, deleted) {
-    console.log(deleted);
     if (err) {
       console.log(err);
     }

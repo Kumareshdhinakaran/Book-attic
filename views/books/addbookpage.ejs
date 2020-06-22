@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%- include ('partial/headercss')%>
+    <%- include ('../partial/headercss')%>
     <link rel="stylesheet" href="/static/css/home.css" />
     <title>BookAttic</title>
   </head>
   <body>
-    <%- include ('partial/navheader')%>
+    <%- include ('../partial/navheader')%>
     <div class="form">
       <form action="/books" method="POST">
         <div class="add-book">
           <!-----------------Form for new Book----------------------------->
           <h3>ADD BOOK</h3>
-          <%- include ('partial/bookdetailsform')%>
+          <%- include ('../partial/bookdetailsform')%>
 
           <!-----------------Submit button--------------------------->
           <div class="button-container">
@@ -25,7 +25,6 @@
       <!---------------------Ends here ---------------------------->
     </div>
 
-    <%- include ('partial/navfooter')%>
+    <%- include ('../partial/navfooter')%>
   </body>
 </html>
-

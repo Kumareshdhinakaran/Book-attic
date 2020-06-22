@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%- include ('partial/headercss')%>
+    <%- include ('../partial/headercss')%>
     <link rel="stylesheet" href="/static/css/home.css" />
     <title>BookAttic</title>
   </head>
   <body>
-    <%- include ('partial/navheader')%> <% console.log(data) %> <% if
+    <%- include ('../partial/navheader')%> <% console.log(data) %> <% if
     (data.length > 0){ %>
     <div id="booksection">
       <!--------------------------Fiction Books---------------------------------->
@@ -15,7 +15,7 @@
         <div class="row">
           <!---------Looping through database and display details of fiction books-------------->
           <% data.forEach(function(book){ if(book.category === "fiction"){ %>
-          <%-include ('partial/cardelement',{book:book}) %> <%}});%>
+          <%-include ('../partial/cardelement',{book:book}) %> <%}});%>
         </div>
       </div>
       <!----------------------------Ends here--------------------------------------->
@@ -25,13 +25,13 @@
         <div class="row">
           <!---------Looping through database and display details of non fiction books-------------->
           <% data.forEach(function(book){ if(book.category === "nonfiction"){ %>
-          <%-include ('partial/cardelement', {book:book}) %> <%}});%>
+          <%-include ('../partial/cardelement', {book:book}) %> <%}});%>
         </div>
       </div>
       <!-----------------------Ends here--------------------------------->
     </div>
     <%}else{%>
     <h2 class="m-5">There is no records to display</h2>
-    <%}%> <%- include ('partial/navfooter') %>
+    <%}%> <%- include ('../partial/navfooter') %>
   </body>
 </html>

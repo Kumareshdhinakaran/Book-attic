@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <%- include ('partial/headercss')%>
+    <%- include ('../partial/headercss')%>
     <link rel="stylesheet" href="/static/css/home.css" />
     <title>BookAttic</title>
 </head>
 <body>
-<%- include ('partial/navheader')%>
+<%- include ('../partial/navheader')%>
 <div class="form">
         <!-----------------Form for edit Book----------------------------->
         <div class="edit-form" id="editForm">
@@ -22,7 +22,7 @@
             </form>
           </div>
           <form action="/books/<%=book._id%>?_method=PUT" method="POST">
-            <%- include ('partial/bookdetailsform')%>
+            <%- include ('../partial/bookdetailsform')%>
             <!-----------------Submit button--------------------------->
             <div class="button-container">
               <a href="/books/<%= book._id%>">
@@ -39,7 +39,7 @@
       </div>
 
     <!---------------------Ends here ---------------------------->
-    <%- include ('partial/navfooter')%>
+    <%- include ('../partial/navfooter')%>
     <script>
       if (document.getElementById("editForm")) {
         document.getElementById("book-title").value = "<%= book.title %>";
