@@ -68,12 +68,11 @@ const create_book = function (req, res) {
   if (error) {
     const { details } = error;
     const message = details.map((i) => i.message).join(",");
-    console.log("error", message);
     request.flash("error", message);
     response.redirect("/books");
   } else {
     var newBook = req.body.book;
-    (newBook.reviews = [
+    newBook.reviews = [
       {
         title: "Amazing Book",
         author: "Natalie Jenner",
@@ -86,18 +85,18 @@ const create_book = function (req, res) {
         text:
           "The book was really amazing. I recomment all buyers who loves reading to this one",
       },
-    ]),
-      // Create a new book and save to DB
-      Book.create(newBook, function (err, newlyCreated) {
-        if (err) {
-          console.log(err);
-        } else {
-          //redirect back to book page
-          req.user.books.push(newlyCreated);
-          req.user.save();
-          res.redirect("/books");
-        }
-      });
+    ];
+    // Create a new book and save to DB
+    Book.create(newBook, function (err, newlyCreated) {
+      if (err) {
+        console.log(err);
+      } else {
+        //redirect back to book page
+        req.user.books.push(newlyCreated);
+        req.user.save();
+        res.redirect("/books");
+      }
+    });
   }
 };
 
