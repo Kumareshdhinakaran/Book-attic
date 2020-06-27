@@ -9,7 +9,6 @@ require("dotenv").config();
 //Database connectivity
 require("./config/dbConnect");
 
-// require("./config/data");
 
 //body parser
 app.use(

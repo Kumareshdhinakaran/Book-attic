@@ -1,5 +1,6 @@
 const Book = require("../models/book");
 const User = require("../models/user");
+var mongoose = require("mongoose");
 const Joi = require("joi");
 
 /**
@@ -120,6 +121,11 @@ const delete_book = function (req, res) {
     if (err) {
       console.log(err);
     }
+    req.user.books.splice(
+      req.user.books.indexOf(mongoose.Types.ObjectId(req.params.id)),
+      1
+    );
+    req.user.save();
     res.redirect("/books");
   });
 };
