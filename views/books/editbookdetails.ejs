@@ -41,13 +41,12 @@
     <!---------------------Ends here ---------------------------->
     <%- include ('../partial/navfooter')%>
     <script>
-      if (document.getElementById("editForm")) {
         document.getElementById("book-title").value = "<%= book.title %>";
         document.getElementById("book-author").value = "<%= book.author%>";
         document.getElementById("book-image").value = "<%= book.image%>";
         document.getElementById("book-cost").value = "<%= book.cost%>";
         document.getElementById("book-rating").value = "<%= book.rating %>";
-        document.getElementById("book-about").value = "<%= book.description %>";
+        document.getElementById("book-about").value = `<%= book.description %>`;
         const rbs = document.querySelectorAll('input[name="book[category]"]');
         for (const rb of rbs) {
           if (rb.value.toLowerCase() === "<%= book.category %>") {
@@ -55,7 +54,6 @@
             break;
           }
         }
-      }
     </script>
   </body>
 </html>

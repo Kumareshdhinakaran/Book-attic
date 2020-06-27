@@ -13,7 +13,7 @@ router.post("/register", function (req, res) {
   var newUser = new User({
     username: req.body.username,
   });
-  
+
   if (req.body.password === req.body.newpassword) {
     User.register(newUser, req.body.password, function (err, user) {
       if (err) {
@@ -41,7 +41,7 @@ router.get("/", function (req, res) {
 router.post(
   "/",
   passport.authenticate("local", {
-    failureFlash: "You are not register yet",
+    failureFlash: "You are not registered yet...",
     successRedirect: "/books",
     failureRedirect: "/",
   })

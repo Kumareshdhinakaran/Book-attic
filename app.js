@@ -5,6 +5,7 @@ var express = require("express"),
   methodOverride = require("method-override"),
   bookRoutes = require("./routes/book");
 
+require("dotenv").config();
 //Database connectivity
 require("./config/dbConnect");
 
@@ -43,6 +44,6 @@ app.use("*", function (req, res) {
 });
 
 //Server listening
-app.listen(5000, function () {
+app.listen(process.env.PORT, function () {
   console.log("Server Started successfully");
 });

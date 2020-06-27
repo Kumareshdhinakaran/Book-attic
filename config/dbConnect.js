@@ -1,7 +1,7 @@
 // Set up mongoose connection
 const mongoose = require("mongoose");
 
-let mongoUrl = "mongodb://localhost:27017/book_attic";
+let mongoUrl = process.env.DATABASE_URL;
 
 mongoose
   .connect(mongoUrl, {
