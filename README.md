@@ -18,7 +18,9 @@ Sirius has taken an initiative to make us smart and resourceful persons through 
 # Final Project - Requirements
 
     1. Register/Login Functionality
-    **Functionality**
+
+    __Functionality__
+
     • Login
         o Allow the user to log in when both username and password fields are
         filled, and user account exists in the database
@@ -104,4 +106,5 @@ Sirius has taken an initiative to make us smart and resourceful persons through 
 
 # Final Application
 
-![Book-attic](http://book-attic.herokuapp.com/)
+![image](public\images\logo.png)
+Click here [Book-attic](http://book-attic.herokuapp.com/)
