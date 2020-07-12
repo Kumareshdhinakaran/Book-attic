@@ -119,4 +119,4 @@ Sirius has taken an initiative to make us smart and resourceful persons through 
 
 # Final Application
 
-Click here [Book-attic](http://book-attic.herokuapp.com/)
+Click here [Book-attic (Try in Desktop/laptop for Better Experience)](http://book-attic.herokuapp.com/)
