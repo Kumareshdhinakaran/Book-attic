@@ -19,21 +19,23 @@ Sirius has taken an initiative to make us smart and resourceful persons through 
 
     1. Register/Login Functionality
 
-    __Functionality__
+    Functionality
 
     • Login
         o Allow the user to log in when both username and password fields are
         filled, and user account exists in the database
         o If the user account doesn’t exist, throw error message as per provided comps (UX)
         o If any field is not filled, throw an appropriate error message
-        • Registration
+
+    • Registration
         o All fields are mandatory in the registration form
         o Register a new user if the username doesn't exist in the database and fix
         all the required fields are completed
         o Throw appropriate error messages when fields are missing/when the
         username already exists in DB.
 
-    **Service Calls**
+    Service Calls
+
     • logInUser(username, password)
         o Use this method to authenticate the user to the application
     • signUpUser(user)
@@ -43,29 +45,35 @@ Sirius has taken an initiative to make us smart and resourceful persons through 
 
     2. Home Page
 
-    **Functionality**
+    Functionality
+
     • All the books added by the user should be available category-wise when the
     page is loaded
     • If there are no books added, then display “No Books Available” message
 
-    **Service Calls**
+    Service Calls
+
     • getBooks(username)
         o Use this method to retrieve all the books added by the user
 
     3. Add Book Screen
 
-    **Functionality**
+    Functionality
+
     • Collect new book data from the form
     • Submit form and create an entry in the database only if all the fields are filled
     • Throw appropriate error message when mandatory fields are missing while
     submitting the form
 
-    **Service Calls**
+    Service Calls
+
     • addBook(book)
         o Use this method to add a new book to attic(database)
 
     4. Edit Book Details Screen
-    **Functionality**
+
+    Functionality
+
     • Edit Book details
         o Update the place details when required fields are filled
         o Throw appropriate error messages similar to “Add form” when fields
@@ -74,7 +82,8 @@ Sirius has taken an initiative to make us smart and resourceful persons through 
         o "Thrash icon" should delete the book from the attic(database) and redirect
         o the user to home page
 
-    **Service Calls**
+    Service Calls
+
     • updateBook(book)
         o Use this method to update book details
     • deleteBook(book)
@@ -82,29 +91,33 @@ Sirius has taken an initiative to make us smart and resourceful persons through 
 
     5. Book Details Screen
 
-    **Functionality**
+    Functionality
+
     • Displays the details of the book along with some dummy/static reviews in the bottom of the page
     • The Add to Cart button is a dummy button and doesn’t have any action
     • The edit icon should take the user to “Edit Book Details” Screen
 
-    **Service Calls**
+    Service Calls
+
     • getBookDetails(bookId)
         o Retrieves the book details of the specified book
 
     6. Sidebar
 
-    **Functionality**
+    Functionality
+
     • Position the logo referring to the wireframe.
     • Display the logged-in username on top-right with the dummy display picture
     (Outside Sidebar)
     • When logout button is clicked on the sidebar, the current user session should
     be terminated, and the user must be re-directed to login page
 
-    **Service Calls**
+    Service Calls
+
     • logout(username)
         o Logs out the current user from the active session
 
 # Final Application
 
-![image](public\images\logo.png)
+![image](./public/images/logo.png)
 Click here [Book-attic](http://book-attic.herokuapp.com/)
