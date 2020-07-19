@@ -1,7 +1,9 @@
 var express = require("express");
 var router = express.Router();
 var passport = require("passport");
+var Book = require("../models/book");
 var User = require("../models/user");
+const book = require("../models/book");
 
 // show register form
 router.get("/register", function (req, res) {
@@ -10,6 +12,7 @@ router.get("/register", function (req, res) {
 
 //handle sign up logic
 router.post("/register", function (req, res) {
+  var sampleBooks = [];
   var newUser = new User({
     username: req.body.username,
   });
@@ -21,7 +24,19 @@ router.post("/register", function (req, res) {
         req.flash("error", err.message);
         res.redirect("/register");
       }
+
       passport.authenticate("local")(req, res, function () {
+        Book.find({}, function (err, books) {
+          if (err) {
+            console.log(err);
+          } else {
+            for (var i = 0; i < books.length; i++) {
+              sampleBooks.push(books[i]);
+            }
+            req.user.books = req.user.books.concat(sampleBooks);
+            req.user.save();
+          }
+        });
         req.flash("success", "Welcome to Book Attic " + user.username);
         res.redirect("/books");
       });
